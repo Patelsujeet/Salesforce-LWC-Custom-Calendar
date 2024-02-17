@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-16-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="c-container">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="12">
+                <div class="page-section page-header">
+                    <c-calendar-header onchangeviewactionname={changeViewHandler}
+                    calendar-title={calendarTitle}>
+                    </c-calendar-header>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <div class="page-section page-main">
+                    <c-calendar-view>
+
+                    </c-calendar-view>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
