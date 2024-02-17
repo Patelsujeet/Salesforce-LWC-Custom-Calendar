@@ -5,9 +5,22 @@
 
 ## Plan to Deploy
 
-Step 1. Deploy the **FullCalendarLibrary** Static Resource in Org ([Click Here](https://github.com/Patelsujeet/LWC-Custom-Calendar/tree/main/force-app/main/default/staticresources))
+Step 1. Deploy the **FullCalendarLibrary** Static Resource in Org ([Click Here](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/tree/main/force-app/main/default/staticresources))
 
-Step 2. Deploy the [calendarView](force-app/main/default/lwc/calendarView) LWC components
+Step 2. Deploy all LWC components
+   a. calendar - component is main component which needs to be place in Lightning Tab or Lightning App
+
+   b. calendarHeader - Use this component to add some custom action in header
+
+   c. calendarView - is main component which will load the calendar and store all property of calendar.
+    
+   d. calendarView - this component has one public method which returns the calendar object which can be used to modify or add events in calendar. [Click Here](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/5f18ba23bce1ab6299d092b28280f382c031ce47/force-app/main/default/lwc/calendarView/calendarView.js#L59)
+    ```
+    @api
+    getCalendarProp() {
+        return this.calendar;
+    }
+    ```
 
 Step 3. You can modify this component as per your requirment and also can modify the meta-data file to use in different places in salesforce.
 
@@ -37,20 +50,20 @@ calendarEvents = [
         }
     ]
 ```
-3. To override the render UI behaviour of events we can use following method
+3. To override the render UI behaviour of events we can use following method: [click here](hhttps://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/5f18ba23bce1ab6299d092b28280f382c031ce47/force-app/main/default/lwc/calendar/calendar.js#L73)
 ```
-    this.calendar.on('eventRender',this.eventRenderHandler.bind(this)); // [click here](https://github.com/Patelsujeet/LWC-Custom-Calendar/blob/dc0449559e012b515741eec09ddd963394877758/force-app/main/default/lwc/calendar/calendar.js#L73)
+    this.calendar.on('eventRender',this.eventRenderHandler.bind(this));
 ```
 Example:
 To show event title in following way:
 " **_Event Title Name_** $`\textcolor{teal}{\text{Id with event status}} `$ "
 
 ## Final Output
-1. ![dayGrid](https://github.com/Patelsujeet/LWC-Custom-Calendar/blob/main/dayGrid.png)
+1. ![dayGrid](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/main/dayGrid.png)
 
-2. ![Month Grid](https://github.com/Patelsujeet/LWC-Custom-Calendar/blob/main/month.png)
+2. ![Month Grid](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/main/month.png)
 
-3. ![Week Grid](https://github.com/Patelsujeet/LWC-Custom-Calendar/blob/main/week%20grid.png)
+3. ![Week Grid](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/main/week%20grid.png)
 
 ## Reference Link
 1. [https://fullcalendar.io/](https://fullcalendar.io/)
