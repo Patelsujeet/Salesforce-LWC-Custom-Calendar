@@ -50,7 +50,7 @@ calendarEvents = [
         }
     ]
 ```
-3. To override the render UI behaviour of events we can use following method: [click here](hhttps://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/5f18ba23bce1ab6299d092b28280f382c031ce47/force-app/main/default/lwc/calendar/calendar.js#L73)
+3. To override the render UI behaviour of events we can use following method: [click here](https://github.com/Patelsujeet/Salesforce-LWC-Custom-Calendar/blob/5f18ba23bce1ab6299d092b28280f382c031ce47/force-app/main/default/lwc/calendar/calendar.js#L73)
 ```
     this.calendar.on('eventRender',this.eventRenderHandler.bind(this));
 ```
